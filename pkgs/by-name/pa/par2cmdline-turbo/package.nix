@@ -1,14 +1,18 @@
-{ lib, stdenv, fetchFromGitHub, autoreconfHook }:
+{ lib
+, stdenv
+, fetchFromGitHub
+, autoreconfHook
+}:
 
 stdenv.mkDerivation rec {
   pname = "par2cmdline-turbo";
-  version = "1.1.0";
+  version = "1.1.1";
 
   src = fetchFromGitHub {
     owner = "animetosho";
-    repo = "par2cmdline-turbo";
+    repo = "${pname}";
     rev = "v${version}";
-    hash = "sha256-+p6EeWn+tgZFRWSK4feQ4TIXJP+2iIcu9Ng0T6JNRCE=";
+    hash = "sha256-EJ6gBja5tPrfsfbqYs8pZDEPmJ6mCPfkUYOTTMFaKG8=";
   };
 
   nativeBuildInputs = [ autoreconfHook ];
